@@ -5,6 +5,10 @@ window.onload = function() {
         var second = myDate.getSeconds();
         var hour= myDate.getHours();
         var min = myDate.getMinutes();
+        var day = myDate.getDay();
+        var days = myDate.getDate();
+        var month = myDate.getMonth();
+        var year = myDate.getFullYear();
         if(second<10) {
             second= "0" + second;
         }
@@ -25,6 +29,36 @@ window.onload = function() {
         }
         document.getElementById("hrmin").innerHTML=hour + ":" + min;
         document.getElementById("seconds").innerHTML=second;
+        switch(day) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        document.getElementById("day").innerHTML = day;
+        if(days <10) {
+            days = "0" + days;
+        }
+        if(month <10) {
+            month = "0" + month;
+        }
+        document.getElementById("date").innerHTML = year + "/" + month + "/" + days;
 
     }
 }
